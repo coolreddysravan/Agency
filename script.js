@@ -118,4 +118,16 @@
     const open = t.parentElement.classList.toggle('open');
     t.setAttribute('aria-expanded', open);
   }));
+  /*chatbox*/
+  Tawk_API.onLoad = function() {
+    Tawk_API.hideWidget();
+  };
+  function openLiveChat() {
+      if (window.Tawk_API &&
+          typeof window.Tawk_API.maximize === "function") {
+          window.Tawk_API.maximize();
+      }
+  }
+
+  /*chatbox*/
 })();
