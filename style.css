@@ -17,8 +17,9 @@ a{color:var(--accent)}
 
 /* ===== Header: top bar ===== */
 .site-header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line)}
-.topbar{display:flex;align-items:center;gap:1rem;min-height:56px;padding-block:.4rem}
-.brand img{height:38px;width:auto;display:block}
+.topbar{display:flex;align-items:right;gap:1rem;min-height:36px;padding-block:.4rem}
+.brand img{height:100px;width:100px;display:block}
+
 /* people: photos with names under them, aligned left beside the logo */
 /* .util{display:flex;gap:1.25rem;align-items:flex-start;margin-left:2rem;margin-right:auto}
 .util a{display:flex;flex-direction:column;align-items:center;gap:.25rem;text-align:center;text-decoration:none}
@@ -104,11 +105,27 @@ a{color:var(--accent)}
 
 /* ===== Stat cards overlapping the hero ===== */
 .kpi-wrap{position:relative;z-index:2;margin-top:-4.5rem;padding:0 4%}
-.kpis{max-width:1000px;margin-inline:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:6px;background:#fff;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.kpis{max-width:2000px;margin-inline:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:6px;background:#fff;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.15)}
 .kpi{color:#fff;text-align:center;padding:1.2rem .4rem;border-radius:10px}
 .kpi b{display:block;font:700 1.9rem var(--serif)}
 .kpi span{font-size:.8rem}
 .k1{background:#6f86f0}.k2{background:#2fb0e4}.k3{background:#07a3b8}.k4{background:#8b6df0}.k5{background:#1fc8a4}
+
+
+/* ===== News: blue section with sticky notes ===== */
+.news{background:var(--blue);color:#fff}
+.news h2{color:#fff}
+.news .lead{color:#d7ebf7}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
+.note{position:relative;background:#fff176;color:#3a3200;padding:2rem 1.2rem 1.3rem;box-shadow:0 8px 14px rgba(0,0,0,.25);transform:rotate(-2deg);transition:transform .2s}
+.note:nth-child(2n){background:#ffc9de;color:#4a1330;transform:rotate(1.8deg)}
+.note:nth-child(3n){background:#c8f2d0;color:#10351a;transform:rotate(-1deg)}
+.note:nth-child(4n){background:#cfe4ff;color:#10294a;transform:rotate(2.2deg)}
+.note:hover{transform:rotate(0) scale(1.03)}
+.note::before{content:"";position:absolute;top:10px;left:50%;width:14px;height:14px;border-radius:50%;background:#d93025;box-shadow:0 2px 3px rgba(0,0,0,.4);transform:translateX(-50%)}
+.note time{font-size:.8rem;font-weight:600;opacity:.75}
+.note h3{font-size:1.2rem;margin:.2rem 0 .4rem}
+.note p{font-size:.95rem;line-height:1.5}
 
 /* ===== Sections ===== */
 .section{padding:4.5rem 0}.alt{background:var(--paper)}
