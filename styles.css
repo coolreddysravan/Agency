@@ -167,7 +167,31 @@ h2 { margin:18px 0 0; font-size:clamp(34px,5vw,51px); line-height:1.03; letter-s
 }
 @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} *,*::before,*::after{transition:none!important;animation:none!important} }
 
+/*trusted */
+/* Trusted Brand Badge */
+.trusted-badge {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    background: transparent;
+}
 
+.trusted-badge img {
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .trusted-badge img {
+        width: 85px;
+    }
+}
+/*logo**/
 /* Hero slider */
 
 /* ==============================
@@ -407,6 +431,246 @@ h2 { margin:18px 0 0; font-size:clamp(34px,5vw,51px); line-height:1.03; letter-s
   }
 }
 
+
+/***about**/
+/* About Us two-column layout */
+#about .about-slide {
+    display: none;
+}
+
+#about .about-slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+    padding: 40px;
+}
+
+/* Left content */
+.about-content {
+    flex: 1.2;
+    min-width: 0;
+    text-align: left;
+}
+
+.about-content h3 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    text-align: left;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Right image */
+.about-image {
+    flex: 0.8;
+    min-width: 0;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #about .about-slide.active {
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .about-content,
+    .about-image {
+        width: 100%;
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+}
+/*about */
+
+/***collage slides*/
+/***left to right***/
+/* Horizontal gallery cards */
+
+.gallery-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0 25px;
+}
+
+.gallery-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: galleryMove 35s linear infinite;
+}
+
+@keyframes galleryMove {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Card layout */
+.gallery-card {
+    width: 340px;
+    min-width: 340px;
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 12px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(220, 220, 220, 0.6);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Small image on left */
+.gallery-card img {
+    width: 105px;
+    height: 115px;
+    flex-shrink: 0;
+
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Text on right */
+.gallery-content {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.gallery-content h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #252936;
+    line-height: 1.4;
+    margin: 0 0 7px;
+}
+
+.gallery-content strong {
+    display: block;
+    color: #D4AF37;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.gallery-content p {
+    font-size: 12px;
+    color: #777D89;
+    margin: 3px 0 0;
+}
+
+/* Pause slider on hover */
+.gallery-slider:hover .gallery-track {
+    animation-play-state: paused;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .gallery-card {
+        width: 290px;
+        min-width: 290px;
+        height: 125px;
+        gap: 12px;
+    }
+
+    .gallery-card img {
+        width: 85px;
+        height: 100px;
+    }
+
+    .gallery-content h3 {
+        font-size: 13px;
+    }
+
+    .gallery-content strong {
+        font-size: 22px;
+    }
+}
+/***left to right***/
+/** right to left***/
+/* COMPANY SLIDER - RIGHT TO LEFT */
+
+.company-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.company-track {
+    animation: companyMoveLeft 35s linear infinite;
+    will-change: transform;
+}
+
+/* Move from right to left */
+@keyframes companyMoveLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Company information */
+.company-track .gallery-content span {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* Pause on hover */
+.company-slider:hover .company-track {
+    animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .company-track {
+        animation-duration: 40s;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .company-track {
+        animation: none;
+    }
+}
+/** right to left***/
+
+/***collage slides/
 /* Mobile responsive design */
 @media (max-width: 600px) {
 
@@ -451,3 +715,7 @@ h2 { margin:18px 0 0; font-size:clamp(34px,5vw,51px); line-height:1.03; letter-s
 }
 
 
+
+
+/* Keep the appointment target visible below the sticky header */
+#contact { scroll-margin-top: 110px; }

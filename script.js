@@ -220,4 +220,8 @@ const kpiObserver = new IntersectionObserver((entries, observer) => {
 }
 
 
+// The About section currently has one static slide, so no slider script is needed.
+
+
+
 });
